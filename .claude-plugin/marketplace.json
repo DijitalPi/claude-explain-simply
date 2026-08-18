@@ -4,7 +4,7 @@
   "description": "Plain-language summaries for long Claude Code answers.",
   "owner": {
     "name": "DijitalPi",
-    "url": "https://github.com/DijitalPi"
+    "url": "https://dijitalpi.com"
   },
   "plugins": [
     {

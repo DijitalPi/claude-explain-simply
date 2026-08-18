@@ -225,6 +225,10 @@ Issues and PRs welcome. Especially:
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE). Copyright © 2026 DijitalPi.
+
+Built by **[DijitalPi](https://dijitalpi.com)** — a solo studio building AI and
+automation tooling for small teams. We write these for our own work first and
+open-source the ones that survive contact with real clients.
 
 🇹🇷 Türkçe: [README.tr.md](README.tr.md)

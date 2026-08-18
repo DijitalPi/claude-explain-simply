@@ -204,6 +204,10 @@ Issue ve PR'lar açık. Özellikle:
 
 ## Lisans
 
-MIT — [LICENSE](LICENSE).
+MIT — [LICENSE](LICENSE). Telif © 2026 DijitalPi.
+
+**[DijitalPi](https://dijitalpi.com)** tarafından yazıldı — küçük ekipler için yapay
+zekâ ve otomasyon araçları geliştiren tek kişilik stüdyo. Bu araçları önce kendi
+işimiz için yazıyoruz; gerçek müşteri işinde ayakta kalanları açık kaynak yapıyoruz.
 
 🇬🇧 English: [README.md](README.md)
