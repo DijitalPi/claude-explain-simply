@@ -1,0 +1,31 @@
+{
+  "name": "claude-explain-simply",
+  "description": "Appends a short, jargon-free summary to long answers, so non-experts can follow along. Always-on via hook, plus an on-demand /simply command.",
+  "version": "0.1.0",
+  "author": {
+    "name": "DijitalPi",
+    "url": "https://github.com/DijitalPi"
+  },
+  "homepage": "https://github.com/DijitalPi/claude-explain-simply",
+  "license": "MIT",
+  "keywords": [
+    "communication",
+    "summary",
+    "eli5",
+    "accessibility",
+    "productivity"
+  ],
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/explain-simply.js\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

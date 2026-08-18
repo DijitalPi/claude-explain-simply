@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-explain-simply",
+  "description": "Plain-language summaries for long Claude Code answers.",
+  "owner": {
+    "name": "DijitalPi",
+    "url": "https://github.com/DijitalPi"
+  },
+  "plugins": [
+    {
+      "name": "claude-explain-simply",
+      "description": "Appends a short, jargon-free summary to long answers. Always-on via hook, plus an on-demand /simply command.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

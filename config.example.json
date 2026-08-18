@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "minLines": 15,
+  "heading": "In simple terms",
+  "separator": "---------",
+  "summaryLines": "3-6",
+  "language": "auto",
+  "avoidTerms": [],
+  "refreshEvery": 8
+}
