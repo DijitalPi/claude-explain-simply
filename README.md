@@ -231,4 +231,8 @@ Built by **[DijitalPi](https://dijitalpi.com)** — a solo studio building AI an
 automation tooling for small teams. We write these for our own work first and
 open-source the ones that survive contact with real clients.
 
+See also: **[DijitalPi plugins for Claude Code](https://github.com/DijitalPi/claude-plugins)** —
+context-guard, install-guard, secret-guard, scope-guard. This plugin is
+installable from that marketplace too.
+
 🇹🇷 Türkçe: [README.tr.md](README.tr.md)

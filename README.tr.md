@@ -210,4 +210,8 @@ MIT — [LICENSE](LICENSE). Telif © 2026 DijitalPi.
 zekâ ve otomasyon araçları geliştiren tek kişilik stüdyo. Bu araçları önce kendi
 işimiz için yazıyoruz; gerçek müşteri işinde ayakta kalanları açık kaynak yapıyoruz.
 
+Ayrıca: **[Claude Code için DijitalPi eklentileri](https://github.com/DijitalPi/claude-plugins)** —
+context-guard, install-guard, secret-guard, scope-guard. Bu eklenti o
+marketplace'ten de kurulabiliyor.
+
 🇬🇧 English: [README.md](README.md)
