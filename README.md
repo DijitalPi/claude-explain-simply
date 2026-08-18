@@ -1,13 +1,26 @@
 # claude-explain-simply
 
-A Claude Code plugin that ends long answers with a short, jargon-free summary.
+[![Release](https://img.shields.io/github/v/release/DijitalPi/claude-explain-simply?color=8A63D2)](https://github.com/DijitalPi/claude-explain-simply/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-8A63D2)](https://claude.com/claude-code)
+
+**A Claude Code plugin that ends long answers with a short, jargon-free summary —
+plain English (or your language), for the people who didn't write the code.**
+
+🇹🇷 [Türkçe dokümantasyon →](README.tr.md)
 
 Claude is good at thorough. Thorough is not always readable — especially when the
 person reading is a founder, a client, a designer, or you at 11pm. This plugin adds
 one thing to the end of long replies: a few plain sentences saying what it all
-means and what happens next.
+means and what happens next. Think ELI5, but for real work: no dumbing down, just
+the version you'd say out loud.
 
 Short replies are left alone.
+
+**Two ways to use it:**
+
+- An always-on `UserPromptSubmit` hook that summarizes long answers automatically.
+- A `/simply` command for when you want a plain-language version on demand.
 
 ---
 
@@ -29,6 +42,24 @@ Fixing it means having one place decide, instead of two.
 Next step is mine: I can make that change and run the tests.
 ```
 
+It works the same on non-code answers — a migration plan, a cost breakdown, an
+analytics readout:
+
+```
+---------
+
+**In simple terms**
+
+Moving the database will take about two hours, and the site stays up the
+whole time. Orders placed during the move are held in a queue and processed
+right after.
+
+The risk is small but real: if the move fails halfway, we roll back and try
+again next week. Nothing is lost either way.
+
+Next step is yours: pick a night this week and I'll schedule it.
+```
+
 That's it. That's the whole plugin.
 
 ---
@@ -40,7 +71,41 @@ That's it. That's the whole plugin.
 /plugin install claude-explain-simply@claude-explain-simply
 ```
 
-Then restart Claude Code. Requires `node` on your PATH.
+Then restart Claude Code.
+
+**Requirements:** Node 14 or newer on your `PATH`. No npm install, no dependencies —
+the hook is a single file that uses only Node built-ins.
+
+---
+
+## The `/simply` command
+
+The hook handles long answers on its own. `/simply` is for the times you want a
+plain-language version *right now* — usually to paste into a message to someone else.
+
+**Restate the last answer:**
+
+```
+/simply
+```
+
+Claude takes its own previous reply and gives you only the summary — no repetition
+of the original, no "here's a simpler version" preamble.
+
+**Restate something specific instead:**
+
+```
+/simply why the deploy failed
+/simply the pricing table above
+/simply what changed in this PR
+```
+
+**A realistic use:** Claude has just walked you through a caching bug across four
+files. You understand it. Your client does not, and wants an update. `/simply` and
+you have the paragraph to send them.
+
+If the thing you asked about is already short and plain, it says so in one line
+rather than padding it out.
 
 ---
 
@@ -162,4 +227,4 @@ Issues and PRs welcome. Especially:
 
 MIT — see [LICENSE](LICENSE).
 
-Türkçe: [README.tr.md](README.tr.md)
+🇹🇷 Türkçe: [README.tr.md](README.tr.md)

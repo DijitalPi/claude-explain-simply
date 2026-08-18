@@ -1,13 +1,25 @@
 # claude-explain-simply
 
-Claude Code'un uzun cevaplarının sonuna kısa, jargonsuz bir özet ekleyen eklenti.
+[![Release](https://img.shields.io/github/v/release/DijitalPi/claude-explain-simply?color=8A63D2)](https://github.com/DijitalPi/claude-explain-simply/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-8A63D2)](https://claude.com/claude-code)
+
+**Claude Code'un uzun cevaplarının sonuna kısa, jargonsuz bir özet ekleyen eklenti —
+kodu yazmayan insanlar için, düz Türkçe.**
+
+🇬🇧 [English documentation →](README.md)
 
 Claude detaylı anlatır; detaylı her zaman okunur demek değil — özellikle karşındaki
 kişi müşteri, tasarımcı ya da gece 11'deki sen olduğunda. Bu eklenti uzun cevapların
 sonuna tek bir şey ekler: her şeyin ne anlama geldiğini ve sıradaki adımı söyleyen
-birkaç düz cümle.
+birkaç düz cümle. Basitleştirme değil — sesli söyleyeceğin hâli.
 
 Kısa cevaplara dokunmaz.
+
+**İki kullanım şekli var:**
+
+- Uzun cevapları otomatik özetleyen, sürekli açık `UserPromptSubmit` hook'u.
+- İstediğin anda sade hâlini almak için `/simply` komutu.
 
 ---
 
@@ -29,6 +41,23 @@ notuna güvenmeye devam ediyor.
 Sıradaki adım bende: değişikliği yapıp testleri koşturabilirim.
 ```
 
+Kod dışı cevaplarda da aynı şekilde çalışır — bir taşıma planı, maliyet dökümü,
+analitik raporu:
+
+```
+---------
+
+**Basitçe anlatım**
+
+Veritabanının taşınması yaklaşık iki saat sürer ve bu sürede site açık kalır.
+Taşıma sırasında gelen siparişler sıraya alınır, hemen sonrasında işlenir.
+
+Risk küçük ama gerçek: taşıma yarıda kalırsa geri alıp haftaya tekrar deneriz.
+İki durumda da kaybolan bir şey olmaz.
+
+Sıradaki adım sende: bu hafta bir gece seç, ben planlayayım.
+```
+
 Eklentinin tamamı bu.
 
 ---
@@ -40,7 +69,40 @@ Eklentinin tamamı bu.
 /plugin install claude-explain-simply@claude-explain-simply
 ```
 
-Sonra Claude Code'u yeniden başlat. `node` gerekiyor.
+Sonra Claude Code'u yeniden başlat.
+
+**Gereksinim:** `PATH`'inde Node 14 veya üstü. npm install yok, bağımlılık yok —
+hook tek dosya ve sadece Node'un kendi modüllerini kullanıyor.
+
+---
+
+## `/simply` komutu
+
+Uzun cevapları hook zaten kendi başına hallediyor. `/simply` ise sade hâli *şimdi*
+istediğin durumlar için — çoğunlukla birine mesaj olarak yapıştırmak üzere.
+
+**Son cevabı sadeleştir:**
+
+```
+/simply
+```
+
+Claude kendi önceki cevabını alır ve sana sadece özeti verir — orijinali tekrar
+etmez, "işte daha basit hâli" gibi bir giriş yapmaz.
+
+**Başka bir şeyi sadeleştir:**
+
+```
+/simply deploy neden patladı
+/simply yukarıdaki fiyat tablosu
+/simply bu PR'da ne değişti
+```
+
+**Gerçek bir kullanım:** Claude sana dört dosyaya yayılmış bir cache hatasını yeni
+anlattı. Sen anladın. Müşteri anlamadı ve durum soruyor. `/simply` diyorsun,
+göndereceğin paragraf elinde.
+
+Sorduğun şey zaten kısa ve sadeyse, şişirmek yerine bunu tek satırda söyler.
 
 ---
 
@@ -131,6 +193,17 @@ Kaldırmak için:
 
 ---
 
+## Katkı
+
+Issue ve PR'lar açık. Özellikle:
+
+- Belirli alanlar için hazır `avoidTerms` setleri (tıp, hukuk, finans, e-ticaret).
+- Özetin Türkçe'de kötü okunduğu durumlar — örnekle bildir, düzeltelim.
+
+---
+
 ## Lisans
 
 MIT — [LICENSE](LICENSE).
+
+🇬🇧 English: [README.md](README.md)
