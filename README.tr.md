@@ -1,5 +1,6 @@
 # claude-explain-simply
 
+[![CI](https://github.com/DijitalPi/claude-explain-simply/actions/workflows/ci.yml/badge.svg)](https://github.com/DijitalPi/claude-explain-simply/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/DijitalPi/claude-explain-simply?color=8A63D2)](https://github.com/DijitalPi/claude-explain-simply/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-8A63D2)](https://claude.com/claude-code)
@@ -190,6 +191,28 @@ Kaldırmak için:
 ```bash
 /plugin uninstall claude-explain-simply@claude-explain-simply
 ```
+
+---
+
+## Testler
+
+```bash
+node --test test/*.test.js
+```
+
+Kurulacak bir şey yok — eklenti Node'un yerleşik modüllerini kullanıyor, testler
+de Node'un yerleşik test runner'ını. Runner için Node 18+ gerekiyor; eklentinin
+kendisi hâlâ Node 14+ ile çalışıyor.
+
+Hook, Claude Code'un çalıştırdığı şekilde ayrı bir process olarak test ediliyor:
+JSON girer, JSON ya da sessizlik çıkar. Her test kendi geçici `HOME` ve `TMPDIR`
+klasörünü alıyor, yani testler senin ayarlarını değil kendi ayarlarını okuyor ve
+kendi prompt sayacını tutuyor.
+
+Asıl garanti altına alınanlar: kural oturumun ilk prompt'unda, sonra da her
+`refreshEvery` prompt'ta bir enjekte ediliyor; config katmanları belgelenen
+sırayla birbirini eziyor; bozuk config ya da anlamsız girdi hiçbir zaman bir
+prompt'una mal olmuyor.
 
 ---
 

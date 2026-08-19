@@ -1,5 +1,6 @@
 # claude-explain-simply
 
+[![CI](https://github.com/DijitalPi/claude-explain-simply/actions/workflows/ci.yml/badge.svg)](https://github.com/DijitalPi/claude-explain-simply/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/DijitalPi/claude-explain-simply?color=8A63D2)](https://github.com/DijitalPi/claude-explain-simply/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Claude Code plugin](https://img.shields.io/badge/Claude%20Code-plugin-8A63D2)](https://claude.com/claude-code)
@@ -211,6 +212,27 @@ To remove it:
 ```bash
 /plugin uninstall claude-explain-simply@claude-explain-simply
 ```
+
+---
+
+## Tests
+
+```bash
+node --test test/*.test.js
+```
+
+Nothing to install — the suite uses Node's built-in test runner the same way the
+hook uses Node's built-in modules. The runner needs Node 18+; the hook itself
+still runs on Node 14+.
+
+The hook is exercised as a subprocess, exactly the way Claude Code runs it: JSON
+in, JSON or silence out. Every test gets a throwaway `HOME` and `TMPDIR`, so the
+suite reads its own config instead of yours and counts its own prompts.
+
+What actually gets pinned down: that the rule is injected on the first prompt and
+then only every `refreshEvery` prompts, that config layers override each other in
+the documented order, and that a broken config or unparsable input never costs
+you a prompt.
 
 ---
 
